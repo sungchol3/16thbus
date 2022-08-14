@@ -1,10 +1,12 @@
-var result = document.querySelector("#result");
-var reader = new FileReader();
-let text = "";
-reader.onload = () => {
-    text = getText('Bus_weekday_cw.csv');
-    result.innerHTML = text;
-};
+function load(){
+  var result = document.querySelector("#result");
+  var reader = new FileReader();
+  let text = "";
+  reader.onload = () => {
+      text = getText('Bus_weekday_cw.csv');
+      result.innerHTML = text;
+  };
+}
 
 function getText(url){
     // read text from URL location
