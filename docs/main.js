@@ -3,22 +3,26 @@ function load(){
   var reader = new FileReader();
   let text = "";
   reader.onload = () => {
-      text = getText('Bus_weekday_cw.csv');
+      text = getText('file://docs/Bus_weekday_cw.csv');
       result.innerHTML = text;
+      console.log(text);
   };
 }
 
-function getText(url){
-    // read text from URL location
-    var request = new XMLHttpRequest();
-    request.open('GET', url, true);
-    request.send(null);
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200) {
-            var type = request.getResponseHeader('Content-Type');
-            if (type.indexOf("text") !== 1) {
-                return request.responseText;
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
             }
         }
     }
+    rawFile.send(null);
 }
