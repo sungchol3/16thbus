@@ -5,7 +5,7 @@ function load(){
   reader.onload = () => {
       text = readTextFile('file://docs/Bus_weekday_cw.csv');
       result.innerHTML = "Change";
-      console.log(text);
+      alert(result);
   };
 }
 
