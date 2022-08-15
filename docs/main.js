@@ -1,6 +1,5 @@
 function load(){
-  var result = document.querySelector("#result");
-  var reader = new FileReader();
+  var result = document.getElementById('result');
   var text = readTextFile('file:///docs/Bus_weekday_cw.csv');
   result.innerHTML = "Change";
 }
