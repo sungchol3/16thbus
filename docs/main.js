@@ -7,12 +7,19 @@ function load(){
 function readTextFile(file)
 {
     $.ajax({
-        url: 'https://sungchol3.github.io/16thbus/Bus_weekday_cw.csv',
-        dataType: 'text',
-    }).done(successFunction);
-}
-
-function successFunction(data) {
-    var array = $.csv.toArrays(data);
-    alert(array);
+        url: "https://sungchol3.github.io/16thbus/Bus_weekday_cw.csv",
+        success: function(csv) {
+            const output = Papa.parse(csv, {
+              header: true, // Convert rows to Objects using headers as properties
+            });
+            if (output.data) {
+              console.log(output.data);
+            } else {
+              console.log(output.errors);
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrow){
+            console.log(textStatus);
+        }
+    });
 }
