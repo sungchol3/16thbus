@@ -3,7 +3,7 @@ function load(){
   var reader = new FileReader();
   let text = "";
   reader.onload = () => {
-      text = getText('file://docs/Bus_weekday_cw.csv');
+      text = readTextFile('file://docs/Bus_weekday_cw.csv');
       result.innerHTML = text;
       console.log(text);
   };
