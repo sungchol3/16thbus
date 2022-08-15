@@ -1,7 +1,7 @@
 function load(){
   var result = document.getElementById('result');
-  var text = readTextFile('file://docs/Bus_weekday_cw.csv');
   result.innerText = "Change";
+  var text = readTextFile('file://docs/Bus_weekday_cw.csv');
 }
 
 function readTextFile(file)
@@ -16,6 +16,7 @@ function readTextFile(file)
             {
                 var allText = rawFile.responseText;
                 alert(allText);
+                return allText;
             }
         }
     }
