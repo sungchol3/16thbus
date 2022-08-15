@@ -1,12 +1,8 @@
 function load(){
   var result = document.querySelector("#result");
   var reader = new FileReader();
-  let text = "";
-  reader.onload = () => {
-      text = readTextFile('file://docs/Bus_weekday_cw.csv');
-      result.innerHTML = "Change";
-  };
-  reader.readAsText();
+  var text = readTextFile('file:///docs/Bus_weekday_cw.csv');
+  result.innerHTML = "Change";
 }
 
 function readTextFile(file)
