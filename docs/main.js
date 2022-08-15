@@ -2,7 +2,7 @@ function load(){
   var result = document.getElementById('result');
   //var text = readTextFile('file:///docs/Bus_weekday_cw.csv');
   result.innerText = "Change";
-  alert(result.innerHTML);
+  alert("This is work!");
 }
 
 function readTextFile(file)
