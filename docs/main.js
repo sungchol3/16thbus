@@ -7,7 +7,7 @@ function load(){
 function readTextFile(file)
 {
     $.ajax({
-        url: 'Bus_weekday_cw.csv',
+        url: 'https://sungchol3.github.io/16thbus/Bus_weekday_cw.csv',
         dataType: 'text',
     }).done(successFunction);
 }
